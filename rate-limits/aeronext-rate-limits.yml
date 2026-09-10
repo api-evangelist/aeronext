@@ -1,0 +1,32 @@
+generated: '2026-09-10'
+method: searched
+source: https://aeronext.com/
+name: Aeronext API rate limits
+description: >-
+  No rate limits are documented because Aeronext publishes no public API. A full
+  contract-discovery pass (STEP 0b) across every host the company and its subsidiary
+  NEXT DELIVERY Inc. operate found no REST/OpenAPI surface, no GraphQL endpoint, no
+  MCP server, no developer portal and no API reference, so there is no request budget,
+  window, burst allowance or exhaustion status code to record. The one application
+  host in the group, tms.skyhub.jp (SkyHub TMS), is a customer-only React application
+  behind a sign-in; it publishes no rate-limit documentation and its backend is not a
+  public API.
+limit_count: 0
+limits: []
+response_headers: []
+exhaustion_status: null
+evidence:
+- url: https://aeronext.com/developers
+  status: 404
+  note: no developer portal
+- url: https://aeronext.com/api
+  status: 404
+  note: no API landing page
+- url: https://aeronext.com/docs/
+  status: 404
+  note: no documentation host
+- url: https://tms.skyhub.jp/
+  status: 200
+  note: >-
+    SkyHub TMS single-page application; serves the same index.html shell for every path
+    including /openapi.json and /api-docs, and publishes no rate-limit reference.

@@ -1,17 +1,33 @@
 aid: aeronext
 name: Aeronext
-description: 'Aeronext is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: Aeronext Inc. (株式会社エアロネクスト) is a Tokyo-based industrial drone technology startup, founded
+  April 2017 by Keisuke Toji in Ebisu-Nishi, Shibuya-ku. Its core product is 4D GRAVITY(R), a patented
+  airframe design that separates the flight unit from the payload unit and actively controls the center
+  of gravity, improving stability, flight efficiency and payload performance. Aeronext monetizes through
+  technology licensing and joint development — the Next-series airframes (AirTruck, LogiAir, PD4B-M-AN
+  with PRODRONE) are built by licensee manufacturers — rather than through software. Its subsidiary NEXT
+  DELIVERY Inc. operates SkyHub(R), a drone-plus-ground smart logistics platform co-developed with Seino
+  Holdings and deployed across Japanese municipalities, with the SkyHub TMS system and a SkyHub Provider
+  License program. Aeronext publishes no public developer program, API reference or machine-readable API
+  contract.
 url: https://raw.githubusercontent.com/api-evangelist/aeronext/refs/heads/main/apis.yml
+image: https://aeronext.com/wp-content/themes/aeronext_re/public/assets/img/icon/aeronext-logo.png
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-09-10'
 modified: '2026-09-10'
 tags:
 - Company
+- Drones
+- UAV
+- Logistics
+- Last Mile Delivery
+- Transportation
+- Robotics
+- Aerospace
+- Supply Chain
+- Japan
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +36,56 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://equityzen.com/company/aeronext
+  url: https://aeronext.com/
+- type: Blog
+  url: https://aeronext.com/blog/
+- type: BlogRSS
+  url: https://aeronext.com/blog/feed/
+- type: Support
+  url: https://aeronext.com/contact/
+- type: PrivacyPolicy
+  url: https://aeronext.com/policy/
+- type: GitHubOrganization
+  url: https://github.com/aeronext
+- type: LLMsTxt
+  url: llms/aeronext-llms.txt
+- type: Packages
+  url: packages/aeronext-packages.yml
+- type: Plans
+  url: plans/aeronext-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/aeronext-rate-limits.yml
+- type: DomainSecurity
+  url: security/aeronext-domain-security.yml
+x-enrichment:
+  date: '2026-09-10'
+  status: minimal
+  artifacts_added: 6
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: 'Aeronext licenses drone airframe technology (4D GRAVITY) to manufacturers and, through NEXT
+    DELIVERY Inc., sells the SkyHub logistics service and its TMS to municipalities - it runs software
+    but ships no developer program: /developers, /api and /docs all 404 on aeronext.com, the SkyHub TMS
+    app at tms.skyhub.jp is a sign-in-only React SPA that returns the same index.html for /openapi.json
+    and /api-docs, and its only public integration (SkyHub TMS to KDDI Smart Drone UTM) was arranged bilaterally
+    with no published contract.'
+  evidence:
+  - url: https://aeronext.com/developers
+    status: 404
+  - url: https://aeronext.com/api
+    status: 404
+  - url: https://aeronext.com/docs/
+    status: 404
+  - url: https://aeronext.com/openapi.json
+    status: 404
+  - url: https://aeronext.co.jp/openapi.json
+    status: 404
+  - url: https://tms.skyhub.jp/openapi.json
+    status: 200
+  - url: https://skyhub.jp/.well-known/agent-card.json
+    status: 404
+  - url: https://aeronext.co.jp/llms.txt
+    status: 200
+  checked: '2026-09-10'

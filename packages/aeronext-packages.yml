@@ -1,0 +1,83 @@
+generated: '2026-09-10'
+method: searched
+source: >-
+  registry searches of npm, PyPI, RubyGems, crates.io, NuGet, Packagist, pkg.go.dev
+  and Maven Central, plus the github.com/aeronext organization
+name: Aeronext client libraries and SDKs
+description: >-
+  Aeronext Inc. publishes no client library, SDK or package on any public registry.
+  Every registry below was queried unauthenticated on 2026-09-10 and returned either
+  nothing for "aeronext" or only unrelated third-party packages. The company's GitHub
+  organization (github.com/aeronext) holds five repositories, four of which are forks
+  of third-party projects (QGroundControl, RAPiD, mosquitto_docker, OpenFoamOnGoogleColab)
+  and one of which is an internal FPV video-streaming demo (uftp-fpv) - none is a client
+  library for an Aeronext API, and none is published to a registry. No `SDKs` pointer is
+  emitted in apis.yml, because there is no SDK to point at.
+package_count: 0
+official_package_count: 0
+packages: []
+registries_searched:
+- registry: npm
+  endpoint: https://registry.npmjs.org/-/v1/search?text=aeronext
+  status: 200
+  first_party_hits: 0
+- registry: pypi
+  endpoint: https://pypi.org/pypi/aeronext/json
+  status: 404
+  first_party_hits: 0
+  note: >-
+    A PyPI package named "skyhub" (v1.2.5) does exist but is authored by "Carmo-sousa"
+    and is unrelated to NEXT DELIVERY Inc.'s SkyHub platform - not recorded as Aeronext's.
+- registry: rubygems
+  endpoint: https://rubygems.org/api/v1/gems/aeronext.json
+  status: 404
+  first_party_hits: 0
+- registry: crates.io
+  endpoint: https://crates.io/api/v1/crates?q=aeronext
+  status: 200
+  first_party_hits: 0
+- registry: nuget
+  endpoint: https://azuresearch-usnc.nuget.org/query?q=aeronext
+  status: 200
+  first_party_hits: 0
+- registry: packagist
+  endpoint: https://packagist.org/search.json?q=aeronext
+  status: 200
+  first_party_hits: 0
+  note: three results, all unrelated aeronautics/NASA libraries by other authors
+- registry: pkg.go.dev
+  endpoint: https://proxy.golang.org/github.com/aeronext/@v/list
+  status: 404
+  first_party_hits: 0
+- registry: maven-central
+  endpoint: https://search.maven.org/solrsearch/select?q=aeronext
+  status: null
+  first_party_hits: null
+  note: >-
+    search.maven.org did not answer within 25s on two attempts; recorded as unreachable
+    rather than guessed. Given zero hits on every other registry and no Java surface in
+    the GitHub organization, a first-party Maven artifact is unlikely but was not confirmed.
+github_organization:
+  url: https://github.com/aeronext
+  verified_owner: >-
+    org profile lists blog https://aeronext.com/ and location Japan, matching Aeronext Inc.
+  public_repos: 5
+  repositories:
+  - name: qgroundcontrol
+    first_party: false
+    note: fork of the QGroundControl cross-platform drone ground control station
+  - name: RAPiD
+    first_party: false
+    note: fork of Boston University's RAPiD overhead-fisheye people detection model
+  - name: mosquitto_docker
+    first_party: false
+    note: Mosquitto MQTT broker container scaffolding
+  - name: OpenFoamOnGoogleColab
+    first_party: false
+    note: OpenFOAM CFD notebook - consistent with airframe aerodynamic simulation work
+  - name: uftp-fpv
+    first_party: true
+    note: >-
+      FPV camera streaming system using UFTP (three Podman containers - camera client,
+      UFTP receiver, web viewer). An internal tool, not a client library, and not published
+      to any registry.

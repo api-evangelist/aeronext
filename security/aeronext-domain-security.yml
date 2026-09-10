@@ -1,0 +1,66 @@
+generated: '2026-09-10'
+method: probed
+source: live DNS/TLS/HTTP probes of every host Aeronext Inc. and its subsidiary NEXT DELIVERY Inc. operate (aeronext.com,
+  aeronext.co.jp, nextdelivery.co.jp, skyhub.jp, tms.skyhub.jp)
+hosts:
+- host: aeronext.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov  1 22:14:20 2026 GMT
+  hsts: false
+- host: aeronext.co.jp
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Dec  3 02:29:37 2026 GMT
+  hsts: false
+- host: nextdelivery.co.jp
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 26 23:09:03 2026 GMT
+  hsts: false
+- host: skyhub.jp
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 20 04:09:10 2026 GMT
+  hsts: false
+  note: 'SkyHub marketing site, operated by NEXT DELIVERY Inc. (footer: (c) 2023 NEXT DELIVERY Inc.)'
+- host: tms.skyhub.jp
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Dec 31 23:59:59 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+  note: SkyHub TMS application (React SPA). The only Aeronext-group host that sets HSTS.
+domains:
+- domain: aeronext.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: false
+- domain: aeronext.co.jp
+  dnssec: false
+  caa: []
+  spf: true
+  spf_record: v=spf1 +a:sv8009.xserver.jp +a:aeronext.co.jp +mx include:spf.sender.xserver.jp ~all
+  dmarc: false
+- domain: skyhub.jp
+  dnssec: false
+  caa: []
+  spf: true
+  spf_record: v=spf1 +a:sv8009.xserver.jp +a:skyhub.jp +mx ip4:153.121.77.125 include:spf.sender.xserver.jp include:_spf.google.com
+    ~all
+  dmarc: false
+- domain: nextdelivery.co.jp
+  dnssec: false
+  caa: []
+  spf: false
+  dmarc: true
+  dmarc_record: v=DMARC1; p=none;
+findings:
+- All five hosts serve HTTPS over TLS 1.3 with valid certificates.
+- HSTS is set on tms.skyhub.jp only (max-age=31536000); the four content sites set no Strict-Transport-Security
+  header.
+- No domain in the group publishes DNSSEC or CAA records.
+- SPF is published for aeronext.com, aeronext.co.jp and skyhub.jp (all Xserver-hosted mail); nextdelivery.co.jp
+  has no SPF.
+- DMARC exists only on nextdelivery.co.jp, at p=none (monitor-only, no enforcement).

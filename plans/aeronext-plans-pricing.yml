@@ -1,0 +1,35 @@
+generated: '2026-09-10'
+method: searched
+source: https://aeronext.com/business/skyhub/provider_license/
+name: Aeronext plans and pricing
+description: >-
+  Aeronext Inc. publishes no public plans, tiers or price list of any kind. Its two
+  revenue motions are a 4D GRAVITY(R) technology-licensing business (licensee drone
+  manufacturers such as PRODRONE and ACSL) and, through its subsidiary NEXT DELIVERY
+  Inc., the SkyHub(R) Provider License and SkyHub TMS logistics services sold to
+  municipalities and logistics operators. Every one of these is quoted through a
+  contact form and a commercial negotiation; no rate card, tier table, per-unit price
+  or currency is published anywhere on the Aeronext, NEXT DELIVERY or SkyHub sites.
+  There is also no API to price - see x-coverage in apis.yml.
+plan_count: 0
+pricing_model: contact-sales
+currency: null
+plans: []
+evidence:
+- url: https://aeronext.com/pricing/
+  status: 404
+  note: no pricing page exists on the English corporate site
+- url: https://aeronext.co.jp/pricing/
+  status: 404
+  note: no pricing page exists on the Japanese corporate site
+- url: https://skyhub.jp/pricing/
+  status: 404
+  note: no pricing page exists on the SkyHub site operated by NEXT DELIVERY Inc.
+- url: https://aeronext.com/business/skyhub/provider_license/
+  status: 200
+  note: >-
+    SkyHub Provider License page describes the licensing program (know-how, tools and
+    operations licensed to third-party operators) but names no fee, tier or price.
+- url: https://aeronext.com/contact/
+  status: 200
+  note: general contact form is the only commercial entry point

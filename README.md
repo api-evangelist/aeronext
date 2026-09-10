@@ -64,5 +64,43 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Aeronext is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://equityzen.com/company/aeronext
+Aeronext Inc. (株式会社エアロネクスト) is a Tokyo-based industrial drone technology startup, founded
+11 April 2017 by Keisuke Toji and headquartered at 2-3-5 Ebisu-Nishi, Shibuya-ku, Tokyo.
+
+- **4D GRAVITY®** — a patented airframe structural design that separates the flight unit from the
+  payload unit and actively controls the center of gravity, improving stability, flight efficiency and
+  payload performance. Licensed to drone manufacturers (PRODRONE, ACSL) rather than sold as software.
+- **"Next" series airframes** — AirTruck, LogiAir, and the PD4B-M-AN built under license with PRODRONE.
+- **NEXT DELIVERY Inc.** (subsidiary, founded January 2021) operates **SkyHub®**, a drone-plus-ground
+  smart logistics platform co-developed with Seino Holdings, deployed in Kosuge, Kamishihoro, Tsuruga,
+  Komatsu, Unnan, Sakaimachi and others, plus **SkyHub TMS** and the SkyHub Provider License program.
+
+## API surface
+
+**Aeronext publishes no public API.** A full contract-discovery pass on 2026-09-10 probed every host the
+group operates — `aeronext.com`, `aeronext.co.jp`, `nextdelivery.co.jp`, `skyhub.jp` and `tms.skyhub.jp` —
+for OpenAPI/Swagger, GraphQL, MCP, `/.well-known/` discovery documents and an A2A agent card, and found
+none. `/developers`, `/api` and `/docs` all return 404. The SkyHub TMS application at `tms.skyhub.jp` is a
+sign-in-only React SPA whose catch-all route returns the same `index.html` for `/openapi.json` and
+`/api-docs`. The company's one publicised systems integration — SkyHub TMS to KDDI Smart Drone's UTM —
+was arranged bilaterally, with no published contract.
+
+The company **does** publish one machine-readable artifact: a WordPress-generated `llms.txt` site index at
+<https://aeronext.co.jp/llms.txt>, captured verbatim in [`llms/`](llms/aeronext-llms.txt).
+
+## What is in this repository
+
+| Path | What it holds | Method |
+|---|---|---|
+| [`llms/aeronext-llms.txt`](llms/aeronext-llms.txt) | Aeronext's own `llms.txt`, saved verbatim | searched |
+| [`well-known/aeronext-well-known.yml`](well-known/aeronext-well-known.yml) | 54 `/.well-known/` probes across 6 hosts — all misses | probed |
+| [`security/aeronext-domain-security.yml`](security/aeronext-domain-security.yml) | TLS/HSTS/DNSSEC/CAA/SPF/DMARC across all five hosts | probed |
+| [`packages/aeronext-packages.yml`](packages/aeronext-packages.yml) | Registry sweep (npm, PyPI, RubyGems, crates, NuGet, Packagist, Go) — no first-party SDK | searched |
+| [`plans/aeronext-plans-pricing.yml`](plans/aeronext-plans-pricing.yml) | No published price list; contact-sales only | searched |
+| [`rate-limits/aeronext-rate-limits.yml`](rate-limits/aeronext-rate-limits.yml) | No API, therefore no documented limits | searched |
+
+- <https://aeronext.com/> — corporate site (English)
+- <https://aeronext.co.jp/> — corporate site (Japanese)
+- <https://skyhub.jp/> — SkyHub®, operated by NEXT DELIVERY Inc.
+- <https://github.com/aeronext> — GitHub organization (5 repos, 4 of them forks)
+- <https://equityzen.com/company/aeronext> — secondary-market listing this profile was harvested from
