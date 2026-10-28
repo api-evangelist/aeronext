@@ -64,43 +64,95 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Aeronext Inc. (株式会社エアロネクスト) is a Tokyo-based industrial drone technology startup, founded
-11 April 2017 by Keisuke Toji and headquartered at 2-3-5 Ebisu-Nishi, Shibuya-ku, Tokyo.
+Aeronext Inc. (株式会社エアロネクスト) is a Tokyo-based industrial drone technology startup, founded April 2017 by Keisuke Toji in Ebisu-Nishi, Shibuya-ku. Its core product is 4D GRAVITY(R), a patented airframe design that separates the flight unit from the payload unit and actively controls the center of gravity, improving stability, flight efficiency and payload performance. Aeronext monetizes through technology licensing and joint development — the Next-series airframes (AirTruck, LogiAir, PD4B-M-AN with PRODRONE) are built by licensee manufacturers — rather than through software. Its subsidiary NEXT DELIVERY Inc. operates SkyHub(R), a drone-plus-ground smart logistics platform co-developed with Seino Holdings and deployed across Japanese municipalities, with the SkyHub TMS system and a SkyHub Provider License program. Aeronext publishes no public developer program, API reference or machine-readable API contract.
 
-- **4D GRAVITY®** — a patented airframe structural design that separates the flight unit from the
-  payload unit and actively controls the center of gravity, improving stability, flight efficiency and
-  payload performance. Licensed to drone manufacturers (PRODRONE, ACSL) rather than sold as software.
-- **"Next" series airframes** — AirTruck, LogiAir, and the PD4B-M-AN built under license with PRODRONE.
-- **NEXT DELIVERY Inc.** (subsidiary, founded January 2021) operates **SkyHub®**, a drone-plus-ground
-  smart logistics platform co-developed with Seino Holdings, deployed in Kosuge, Kamishihoro, Tsuruga,
-  Komatsu, Unnan, Sakaimachi and others, plus **SkyHub TMS** and the SkyHub Provider License program.
+**Areas:** Company · Drones · UAV · Logistics · Last Mile Delivery · Transportation · Robotics · Aerospace · Supply Chain · Japan
 
-## API surface
+## Aeronext on APIs.io
 
-**Aeronext publishes no public API.** A full contract-discovery pass on 2026-09-10 probed every host the
-group operates — `aeronext.com`, `aeronext.co.jp`, `nextdelivery.co.jp`, `skyhub.jp` and `tms.skyhub.jp` —
-for OpenAPI/Swagger, GraphQL, MCP, `/.well-known/` discovery documents and an A2A agent card, and found
-none. `/developers`, `/api` and `/docs` all return 404. The SkyHub TMS application at `tms.skyhub.jp` is a
-sign-in-only React SPA whose catch-all route returns the same `index.html` for `/openapi.json` and
-`/api-docs`. The company's one publicised systems integration — SkyHub TMS to KDDI Smart Drone's UTM —
-was arranged bilaterally, with no published contract.
+Everything profiled for Aeronext is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/aeronext/](https://apis.io/providers/aeronext/)** — or go straight to one of the APIs or properties below.
 
-The company **does** publish one machine-readable artifact: a WordPress-generated `llms.txt` site index at
-<https://aeronext.co.jp/llms.txt>, captured verbatim in [`llms/`](llms/aeronext-llms.txt).
+### Published properties
 
-## What is in this repository
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-| Path | What it holds | Method |
-|---|---|---|
-| [`llms/aeronext-llms.txt`](llms/aeronext-llms.txt) | Aeronext's own `llms.txt`, saved verbatim | searched |
-| [`well-known/aeronext-well-known.yml`](well-known/aeronext-well-known.yml) | 54 `/.well-known/` probes across 6 hosts — all misses | probed |
-| [`security/aeronext-domain-security.yml`](security/aeronext-domain-security.yml) | TLS/HSTS/DNSSEC/CAA/SPF/DMARC across all five hosts | probed |
-| [`packages/aeronext-packages.yml`](packages/aeronext-packages.yml) | Registry sweep (npm, PyPI, RubyGems, crates, NuGet, Packagist, Go) — no first-party SDK | searched |
-| [`plans/aeronext-plans-pricing.yml`](plans/aeronext-plans-pricing.yml) | No published price list; contact-sales only | searched |
-| [`rate-limits/aeronext-rate-limits.yml`](rate-limits/aeronext-rate-limits.yml) | No API, therefore no documented limits | searched |
+#### Security (1)
 
-- <https://aeronext.com/> — corporate site (English)
-- <https://aeronext.co.jp/> — corporate site (Japanese)
-- <https://skyhub.jp/> — SkyHub®, operated by NEXT DELIVERY Inc.
-- <https://github.com/aeronext> — GitHub organization (5 repos, 4 of them forks)
-- <https://equityzen.com/company/aeronext> — secondary-market listing this profile was harvested from
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Aeronext Domain Security](https://apis.io/security/aeronext/aeronext-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Aeronext Plans Pricing](https://apis.io/plans/aeronext/aeronext-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Aeronext Rate Limits](https://apis.io/rate-limits/aeronext/aeronext-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://aeronext.com/)
+- [Support](https://aeronext.com/contact/)
+- [Blog](https://aeronext.com/blog/)
+- [Privacy policy](https://aeronext.com/policy/)
+- [GitHub](https://github.com/aeronext)
+
+## API Evangelist rating
+
+**Kin Score 8.6** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 7.1 |
+| Access clarity | 10.5 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 9.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/aeronext/](https://apis.io/providers/aeronext/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Aeronext: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/aeronext/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
